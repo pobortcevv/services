@@ -28,7 +28,7 @@ metadata:
   name: nginx
 spec:
   type: LoadBalancer
-  loadBalancerIP: 192.168.65.5
+  loadBalancerIP: 192.168.99.106
   ports:
     - port: 80
       name: http
