@@ -1,15 +1,14 @@
 server {
 	listen 80;
 	listen [::]:80;
-	server_name 192.168.99.106;
+	server_name 192.168.99.101;
 	return 301 https://$server_name$request_uri;
 }
-
 server {
 	listen 443 ssl;
 	listen [::]:443 ssl;
 	
-	server_name localhost;
+	server_name 192.168.99.101;
 	ssl on;
         ssl_certificate /etc/ssl/certs/sabra.crt ;
         ssl_certificate_key /etc/ssl/private/sabra.key ;

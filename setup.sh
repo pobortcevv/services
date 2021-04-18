@@ -1,12 +1,11 @@
-#!/bin/sh
-minikube start --vm-driver=virtualbox
-minikube addons enable metallb;
-minikube addons enable dashboard;
-
-kubectl apply -f srcs/yaml/metallb-config.yaml;
+minikube start --driver=virtualbox --memory='3000' --disk-size 5000MB;
+minikube addons enable metallb
+minikube addons enable dashboard
 
 eval $(minikube -p minikube docker-env);
-docker build -t nginx:latest srcs/nginx/;
-kubectl apply -f srcs/yaml/nginx.yaml;
+kubectl apply -f srcs/yaml/metallb-config.yaml
+
+docker build -t nginx_my srcs/nginx/
+kubectl apply -f srcs/yaml/nginx.yaml
 
 minikube dashboard
