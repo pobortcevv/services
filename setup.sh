@@ -3,6 +3,8 @@ minikube addons enable metallb
 minikube addons enable dashboard
 
 eval $(minikube -p minikube docker-env);
+docker pull metallb/speaker:v0.8.2
+docker pull metallb/controller:v0.8.2
 kubectl apply -f srcs/yaml/metallb-config.yaml
 
 docker build -t nginx_my srcs/nginx/
