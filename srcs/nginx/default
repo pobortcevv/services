@@ -15,8 +15,16 @@ server {
 	root /www;
 	index index.html; 
 
+	location /wordpress {
+		return 307 http://$host:5050;
+		}
+
 	location / {
 		autoindex on;
 		try_files $uri $uri/ =404;
+		}
+
+	location = /404.html {
+		internal;
 		}
 	}
