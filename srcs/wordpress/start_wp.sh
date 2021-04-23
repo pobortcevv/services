@@ -1,5 +1,3 @@
 #!/bin/sh
-
-rc-service nginx restart
-rc-service php-fpm7 restart
-sleep infinity
+nginx -g "daemon off;"
+/usr/sbin/php-fpm7 -F
