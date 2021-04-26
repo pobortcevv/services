@@ -11,7 +11,7 @@ docker build -t nginx_my srcs/nginx/
 kubectl apply -f srcs/yaml/nginx.yaml
 docker build -t wordpress srcs/wordpress/
 kubectl apply -f srcs/yaml/wordpress.yaml
-docker build -t my_sql srcs/mysql/
+docker build -t mysql srcs/mysql/
 kubectl apply -f srcs/yaml/mysql.yaml
 
 minikube dashboard

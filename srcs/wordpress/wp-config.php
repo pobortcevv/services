@@ -29,17 +29,13 @@ define( 'DB_USER', 'sabra' );
 define( 'DB_PASSWORD', 'sabra_21' );
 
 /** MySQL hostname */
-define( 'DB_HOST', 'localhost' );
-define( 'WP_HOME', 'http://192.168.99.101:5050/' );
-define( 'WP_SITEURL', 'http://192.168.99.101:5050/' );
+define( 'DB_HOST', 'mysql-service:3306' );
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
 
 /** The Database Collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
-
-define('FS_METHOD', 'direct');
 
 /**#@+
  * Authentication Unique Keys and Salts.

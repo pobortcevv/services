@@ -1,3 +1,3 @@
 #!/bin/sh
-nginx -g "daemon off;"
-/usr/sbin/php-fpm7 -F
+
+/usr/bin/supervisord -c /etc/supervisord.conf

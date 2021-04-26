@@ -2,7 +2,7 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: cip-mysql:3306
+-- Host: mysql-service:3306
 -- Generation Time: Oct 19, 2020 at 05:33 PM
 -- Server version: 10.4.15-MariaDB
 -- PHP Version: 7.3.23
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `wp_commentmeta` (
   `meta_id` bigint(20) UNSIGNED NOT NULL,
-  `comment_id` bigin(20) UNSIGNED NOT NULL DEFAULT 0,
-  `meta_key` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `comment_id` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
+  `meta_key` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
   `meta_value` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -110,7 +110,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (3, 'blogname', 'Да забей', 'yes'),
 (4, 'blogdescription', 'Ещё один сайт на WordPress', 'yes'),
 (5, 'users_can_register', '0', 'yes'),
-(6, 'admin_email', 'kostbg1@gmail.com', 'yes'),
+(6, 'admin_email', 'sabra@gmail.com', 'yes'),
 (7, 'start_of_week', '1', 'yes'),
 (8, 'use_balanceTags', '0', 'yes'),
 (9, 'use_smilies', '1', 'yes'),
@@ -699,4 +699,4 @@ COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;t
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
