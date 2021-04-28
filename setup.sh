@@ -9,9 +9,14 @@ kubectl apply -f srcs/yaml/metallb-config.yaml
 
 docker build -t nginx_my srcs/nginx/
 kubectl apply -f srcs/yaml/nginx.yaml
+
 docker build -t wordpress srcs/wordpress/
 kubectl apply -f srcs/yaml/wordpress.yaml
+
 docker build -t mysql srcs/mysql/
 kubectl apply -f srcs/yaml/mysql.yaml
+
+docker build -t mysql srcs/phpmyadmin/
+kubectl apply -f srcs/yaml/phpmyadmin.yaml
 
 minikube dashboard
