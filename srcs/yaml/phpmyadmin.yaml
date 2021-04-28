@@ -24,7 +24,7 @@ kind: Service
 metadata:
   name: phmyadmin-service
   annotations:
-    metallb.universe.tf/allow-shared-ip: services
+    metallb.universe.tf/allow-shared-ip: wp
 spec:
   type: LoadBalancer
   selector:
