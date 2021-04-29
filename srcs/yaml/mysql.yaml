@@ -4,6 +4,8 @@ metadata:
   name: wordpress-mysql
   labels:
     app: wordpress
+  annotations:
+    metallb.universe.tf/allow-shared-ip: wp
 spec:
   ports:
     - port: 3306

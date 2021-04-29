@@ -10,6 +10,9 @@ RUN wget https://dl.influxdata.com/telegraf/releases/telegraf-1.17.0_linux_amd64
 RUN tar -xf telegraf-1.17.0_linux_amd64.tar.gz --strip-components=2 -C /
 RUN rm telegraf-1.17.0_linux_amd64.tar.gz
 
+RUN mkdir -p /run/mysql/
+RUN chmod -R 777 /var/lib/mysql/
+
 COPY telegraf.conf /etc/telegraf/
 COPY supervisord.conf /etc/
 COPY db.sql .

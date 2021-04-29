@@ -3,6 +3,7 @@ minikube addons enable metallb
 minikube addons enable dashboard
 
 eval $(minikube -p minikube docker-env);
+
 docker pull metallb/speaker:v0.8.2
 docker pull metallb/controller:v0.8.2
 kubectl apply -f srcs/yaml/metallb-config.yaml
@@ -18,5 +19,11 @@ kubectl apply -f srcs/yaml/mysql.yaml
 
 docker build -t phpmyadmin srcs/phpmyadmin/
 kubectl apply -f srcs/yaml/phpmyadmin.yaml
+
+docker build -t ftps srcs/ftps/
+kubectl apply -f srcs/yaml/ftps.yaml
+
+docker build -t influxdb srcs/influxdb/
+kubectl apply -f srcs/yaml/influxdb.yaml
 
 minikube dashboard
