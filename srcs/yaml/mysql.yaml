@@ -1,67 +1,57 @@
 apiVersion: v1
-kind: Service
-metadata:
-  name: wordpress-mysql
-  labels:
-    app: wordpress
-  annotations:
-    metallb.universe.tf/allow-shared-ip: wp
-spec:
-  ports:
-    - port: 3306
-  selector:
-    app: wordpress
-    tier: mysql
-  clusterIP: None
----
-apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mysql-pv-claim
+  name: mysql-pvc
   labels:
-    app: wordpress
+      app  : mysql
 spec:
   accessModes:
-    - ReadWriteOnce
+  - ReadWriteOnce
   resources:
     requests:
-      storage: 500Mi
+      storage: 1Gi
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: wordpress-mysql
+  name: mysql-deployment
   labels:
-    app: wordpress
+    app  : mysql
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app: wordpress
-      tier: mysql
-  strategy:
-    type: Recreate
+        project: mysql
   template:
     metadata:
       labels:
-        app: wordpress
-        tier: mysql
+        project: mysql
     spec:
+      volumes:
+      - name: mysql-volume
+        persistentVolumeClaim:
+          claimName: mysql-pvc
       containers:
-      - image: mysql:latest
-        name: mysql
-        en:
-        - name: sabra_21
-          valueFrom:
-            secretKeyRef:
-              name: mysql-pass
-              key: sabra_21
+      - name           : mysql
+        image          : mysql:latest
+        imagePullPolicy: Never
         ports:
         - containerPort: 3306
-          name: mysql
-        volumeMounts:
-        - name: mysql-persistent-storage
-          mountPath: /var/lib/mysql
-      volumes:
-      - name: mysql-persistent-storage
-        persistentVolumeClaim:
-          claimName: mysql-pv-claim
+        volumeMounts   :
+        - mountPath: "/var/lib/mysql"
+          name     : mysql-volume
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-service
+  labels:
+      app  : mysql
+spec:
+  type: ClusterIP
+  selector:
+    project: mysql
+  ports:
+  - name      : http
+    port      : 3306
+    targetPort: 3306
