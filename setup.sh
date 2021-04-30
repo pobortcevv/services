@@ -26,4 +26,7 @@ kubectl apply -f srcs/yaml/ftps.yaml
 docker build -t influxdb srcs/influxdb/
 kubectl apply -f srcs/yaml/influxdb.yaml
 
+docker build -t grafana srcs/grafana/
+kubectl apply -f srcs/yaml/grafana.yaml
+
 minikube dashboard
