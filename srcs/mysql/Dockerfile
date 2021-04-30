@@ -15,9 +15,9 @@ RUN chmod -R 777 /var/lib/mysql/
 
 COPY telegraf.conf /etc/telegraf/
 COPY supervisord.conf /etc/
-COPY db.sql .
-COPY init_database.sql ./
-COPY start_db.sh .
+COPY db.sql /
+COPY init_database.sql /
+COPY start_db.sh /
 COPY db.cnf /etc/
 
 RUN chmod u+x start_db.sh

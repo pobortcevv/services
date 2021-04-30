@@ -18,7 +18,7 @@ COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 COPY start_wp.sh start_wp.sh
 COPY supervisor.conf /etc/supervisord.conf
 RUN chmod u+x start_wp.sh
-COPY wp-config.php /www/wordpress
+COPY wp-config.php /www/wordpress/
 #RUN rm -rf /www/wordpress/wp-config-sample.php
 
 EXPOSE 5050
