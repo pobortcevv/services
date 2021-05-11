@@ -1,7 +1,7 @@
 FROM alpine:3.12.1
 
 RUN apk  update && apk  upgrade
-RUN apk  add nginx openssl supervisor
+RUN apk  add nginx openssl supervisor libc6-compat
 RUN mkdir -p /run/nginx
 
 RUN wget https://dl.influxdata.com/telegraf/releases/telegraf-1.17.0_linux_amd64.tar.gz
