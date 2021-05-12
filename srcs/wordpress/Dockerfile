@@ -13,6 +13,11 @@ RUN wget https://wordpress.org/latest.zip \
     && mv wordpress /www/ \
     && rm latest.zip
 
+RUN wget https://dl.influxdata.com/telegraf/releases/telegraf-1.17.0_linux_amd64.tar.gz
+RUN tar -xf telegraf-1.17.0_linux_amd64.tar.gz --strip-components=2 -C /
+RUN rm telegraf-1.17.0_linux_amd64.tar.gz
+COPY ./telegraf.conf /etc/telegraf/
+
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
 COPY start_wp.sh start_wp.sh
