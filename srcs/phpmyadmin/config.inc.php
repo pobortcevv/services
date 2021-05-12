@@ -32,7 +32,7 @@ $cfg['Servers'][$i]['auth_type'] = 'cookie';
 $cfg['Servers'][$i]['host'] = 'mysql-service';
 $cfg['Servers'][$i]['port'] = '3306';
 $cfg['Servers'][$i]['user'] = 'sabra';
-$cfg['Servers'][$i]['password'] = 'sabra_21';
+$cfg['Servers'][$i]['password'] = 'pass';
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = false;
 /**
@@ -42,8 +42,6 @@ $cfg['Servers'][$i]['AllowNoPassword'] = false;
 /* User used to manipulate with storage */
 // $cfg['Servers'][$i]['controlhost'] = '';
 // $cfg['Servers'][$i]['controlport'] = '';
-$cfg['Servers'][$i]['controluser'] = 'sabra';
-$cfg['Servers'][$i]['controlpass'] = 'sabra_21';
 
 /* Storage database and tables */
 // $cfg['Servers'][$i]['pmadb'] = 'phpmyadmin';

@@ -1,4 +1,4 @@
-CREATE DATABASE sabra_database;
-CREATE USER 'sabra'@'%' IDENTIFIED BY 'sabra_21';
-GRANT ALL PRIVILEGES ON sabra_database.* TO 'sabra'@'%';
+CREATE DATABASE wordpress;
+CREATE USER 'sabra'@'%' IDENTIFIED BY 'pass';
+GRANT ALL PRIVILEGES ON wordpress.* TO 'sabra'@'%';
 FLUSH PRIVILEGES;

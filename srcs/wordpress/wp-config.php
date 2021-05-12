@@ -20,16 +20,16 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'sabra_database' );
+define( 'DB_NAME', 'wordpress' );
 
 /** MySQL database username */
 define( 'DB_USER', 'sabra' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'sabra_21' );
+define( 'DB_PASSWORD', 'pass' );
 
 /** MySQL hostname */
-define( 'DB_HOST', 'mysql-service:3306' );
+define( 'DB_HOST', 'mysql-service' );
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
@@ -46,14 +46,14 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'rS$]qkYc`cmXWh!JO8Tj{W>m4O[tr]85|ZlnKN#FgolO(whX^zis*Ngq7 g-DM2+');
-define('SECURE_AUTH_KEY',  'TpzI>fR:xdDIcj6P1#-mrck+#gIo,y_0v1B~SYqwYBoP-qc}/maee ki+5DVE||?');
-define('LOGGED_IN_KEY',    'L-7>3LSlh,-3NR>gm|o/#P~ykVR-h~+<^+_6`%kDnbxQ-[D%xQVpV,v-Md=XPX29');
-define('NONCE_KEY',        'NjYwP|#QC|eG-wO~_@2fqY+w!xgfh[{Gw+G`0*7E8,G a+M//-|+,e(|l/q&-93m');
-define('AUTH_SALT',        '|&Do.R+7&e<0tx|?t/PB$puyj].p`j#HkT]GjB/^!^#%`&0|kR_Ox/79x8p+n|u!');
-define('SECURE_AUTH_SALT', 'V,U,$S2;ss}ps-iQ5[E@n+ &0/N`|XWms):/j+-q]C+yhL=?sL&*l/I?6tk[0-+1');
-define('LOGGED_IN_SALT',   'Av#0xlc|-QYj5<1yI$~cuI:@`|j+JOSio]@J:qz<{|#3p;~X)^]T-lEpe=g/)$;I');
-define('NONCE_SALT',       'xc 8CAJp&IbnAVyXZQ;0^7M||orZA;iRBZ)A?Wu`/4Wt|aYw#K* KKCdi3mx(|=`');
+define('AUTH_KEY',         'I2>M{M?br^YMk1R$DhAaqtvEj_aW3R_61m|i3|(.cd6>OI*YJ!FKcJwc&,8[Yw0 ');
+define('SECURE_AUTH_KEY',  '`C.^h)p9[zQO/o284h|9MYgP> K7H~jiky@K)r2gf=|$F5=&Ghv_{2qW0FWIRUN7');
+define('LOGGED_IN_KEY',    'O6(uiH{@;_46l_f6{Bxvg3^83z@tS|X|Hdw`*PzQyBkc%1A9~}w@4+VCzFM-pB6b');
+define('NONCE_KEY',        '2 Z =p%M}K~kk-L-?o}#be)GMSQ$!Pd 1dlZ9VU}j;i024~Gpn^nY$<IYf~_*Y?b');
+define('AUTH_SALT',        '0hM+z`boT|R1Ql/7>?5aa=/+|}A?Zzv^R0_7~l9r[0E/1zKu(-=U~G+PSV,W0-rn');
+define('SECURE_AUTH_SALT', '2:ROym-`>{!9;;1,RM1w[^b|9<mzB+2 s{_]`fscDD_&#h}+Fw;|#-IZ3o[aJ:(H');
+define('LOGGED_IN_SALT',   '+%4vKV5`|_b<_[5m.ReVu>a%|Lq}D{/(U2t`zxZZ[];|]@}+_>dXM.AEc1Mxbh3m');
+define('NONCE_SALT',       'M5=UfcsQ^Kjv&/5GugIH-I^!!_++ppKlq-c[lk-ZeT#:_[<t,$(@;++.c]sx0H 7');
 /**#@-*/
 
 /**
@@ -76,7 +76,7 @@ $table_prefix = 'wp_';
  *
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', false );
+define( 'WP_DEBUG', true );
 
 define( 'WP_ALLOW_REPAIR', true );
 /* That's all, stop editing! Happy publishing. */
