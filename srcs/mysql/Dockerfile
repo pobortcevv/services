@@ -1,26 +1,27 @@
-FROM alpine:3.12.1
+FROM alpine:3.12.3
 
-RUN apk update && apk upgrade
-RUN apk update && apk upgrade \
-    && apk add mariadb mariadb-client curl supervisor\
-    && apk add openrc libc6-compat\
-    && rm -rf /var/cache/apk/*
+VOLUME ["/var/lib/mysql"]
+
+RUN apk update
+RUN apk add\
+	mysql\
+	mysql-client\
+	openrc\
+	libc6-compat\
+	supervisor
 
 RUN wget https://dl.influxdata.com/telegraf/releases/telegraf-1.17.0_linux_amd64.tar.gz
 RUN tar -xf telegraf-1.17.0_linux_amd64.tar.gz --strip-components=2 -C /
 RUN rm telegraf-1.17.0_linux_amd64.tar.gz
-
-RUN mkdir -p /run/mysql/
-RUN chmod -R 777 /var/lib/mysql/
-
 COPY ./telegraf.conf /etc/telegraf/
-COPY supervisord.conf /etc/
-COPY init_database.sql /
-COPY start_db.sh /
-COPY db.cnf /etc/
 
-RUN chmod u+x start_db.sh
-VOLUME [ "/var/lib/mysql" ]
+COPY ./supervisord.conf /etc/
+
+COPY ./init_db.sql /
+COPY ./mysql-service.sql /
+COPY ./my.cnf /etc/
+COPY ./start_mysql.sh /
 
 EXPOSE 3306
-ENTRYPOINT sh start_db.sh
+
+CMD /start_mysql.sh

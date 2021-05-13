@@ -11,7 +11,7 @@ kubectl apply -f srcs/yaml/metallb-config.yaml
 docker build -t nginx_my srcs/nginx/
 kubectl apply -f srcs/yaml/nginx.yaml
 
-docker build -t mysql srcs/mysql/
+docker build -t mysql:v1 srcs/mysql/
 kubectl apply -f srcs/yaml/mysql.yaml
 
 docker build -t wordpress srcs/wordpress/
