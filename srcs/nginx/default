@@ -11,6 +11,8 @@ server {
     	ssl_certificate /etc/ssl/certs/sabra.crt ;
     	ssl_certificate_key /etc/ssl/private/sabra.key ;
 
+	rewrite ^([^.]*[^/])$ $1/ permanent;
+
 	root /www;
 	index index.html; 
 
@@ -25,7 +27,7 @@ server {
 		proxy_set_header Host $host;
 		proxy_set_header X-Forwarded-Proto https;
 		proxy_pass http://$host:5000;
-		}
+	}
 
 	location ~ \/index.php {
 		return 301 http://$host/phpmyadmin/;
